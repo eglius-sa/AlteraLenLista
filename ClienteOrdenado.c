@@ -1,6 +1,9 @@
 // main.c
 #include "ListaOrdenada.h"
 #include "ListaOrdenada.c"
+#include <stdlib.h>
+#include <stdio.h>
+
 
 int main() {
   LISTA lista;
@@ -14,6 +17,7 @@ int main() {
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
 
+
   // Inserir elementos na lista
   reg.chave = 9;
   inserirElemListaOrd(&lista, reg);
@@ -26,11 +30,14 @@ int main() {
   reg.chave = 12;
   inserirElemListaOrd(&lista, reg);
 
+    
   // Exibir lista após inserções
   exibirLista(&lista);
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
 
+
+//nova lista
   // Buscar um elemento na lista
   int pos = buscaSequencial(&lista, 4);
   printf("Chave 4 encontrada na posicao: %i do arranjo A.\n", pos);

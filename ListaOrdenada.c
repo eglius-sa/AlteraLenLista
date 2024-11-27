@@ -5,6 +5,8 @@
 /* Inicialização da lista sequencial (a lista já está criada e é apontada pelo endereço em l) */
 void inicializarLista(LISTA* l){
   l->nroElem = 0;
+  l->tamanho = MAX; // aqui chama o tamanho inicial. 
+  
 } /* inicializarLista */
 
 
@@ -15,7 +17,13 @@ void exibirLista(LISTA* l){
   for (i=0; i < l->nroElem; i++)
     printf("%i ", l->A[i].chave);
   printf("\"\n");
-} /* exibirLista */ 
+} /* exibirLista */  
+
+void novoTamanho(LISTA *L, int novtamanho);
+if (tamanho == nroElem){novtamanho=tamanho*1.5};
+else if (tamanho == nroElem * 4){novtamanho = tamamho * 0.5};
+l->A = (REGISTRO*)realloc (l->A,novamanho*sizeof(REGISTRO));
+int tamanho = novtamanho;
 
 /* Retornar o tamanho da lista (numero de elementos "validos") */
 int tamanho(LISTA* l) {
@@ -27,6 +35,7 @@ int tamanho(LISTA* l) {
    A priori, nao precisariamos do ponteiro para a lista, vamos utiliza-lo apenas
    porque teremos as mesmas funcoes para listas ligadas.   
 */
+
 int tamanhoEmBytes(LISTA* l) {
   return sizeof(LISTA);
 } /* tamanhoEmBytes */

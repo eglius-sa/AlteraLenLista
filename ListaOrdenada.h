@@ -17,14 +17,22 @@ typedef struct {
 } REGISTRO;
 
 typedef struct {
-  REGISTRO A[MAX+1];
+  REGISTRO *A;
   int nroElem;
+  int novtamanho;
+  int tamanho;
 } LISTA;
+
+/*typedef struct {
+  LISTA N[]
+  int novoNroElem;
+}NOVALISTA;*/
 
 // Declaração das funções
 void inicializarLista(LISTA* l);
 void exibirLista(LISTA* l);
 int tamanho(LISTA* l);
+int novoTamanho(LISTA* l, REGISTRO *A);
 int tamanhoEmBytes(LISTA* l);
 TIPOCHAVE primeiroElem(LISTA* l);
 TIPOCHAVE ultimoElem(LISTA* l);
@@ -38,5 +46,7 @@ bool excluirElemLista(LISTA* l, TIPOCHAVE ch);
 bool excluirElemListaOrd(LISTA* l, TIPOCHAVE ch);
 bool inserirElemListaOrd(LISTA* l, REGISTRO reg);
 bool inserirElemListaOrdSemDup(LISTA* l, REGISTRO reg);
+
+
 
 #endif // LISTA_SEQUENCIAL_ORDENADA_H
